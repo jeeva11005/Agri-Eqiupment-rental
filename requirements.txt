@@ -1,0 +1,6 @@
+Flask
+numpy
+pandas
+reportlab
+scikit-learn
+waitress
