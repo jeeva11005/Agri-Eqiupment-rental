@@ -1,0 +1,38 @@
+<div class="support-chat" data-user-role="{{ session.get('user_type', 'farmer') }}">
+    <button class="support-launcher" type="button" aria-label="Open customer support" aria-expanded="false" title="Customer support">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </button>
+
+    <section class="support-panel" aria-label="Agri Rent AI customer support" hidden>
+        <header class="support-header">
+            <div class="support-heading">
+                <span class="support-avatar"><i class="fas fa-seedling" aria-hidden="true"></i></span>
+                <div>
+                    <h2>Agri Rent AI Support</h2>
+                    <p><span class="support-status-dot"></span>Here to help</p>
+                </div>
+            </div>
+            <button class="support-close" type="button" aria-label="Close support chat" title="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <div class="support-messages" aria-live="polite" aria-relevant="additions text">
+            <div class="support-message support-message-bot">
+                <p>Hello! I can help with your account and equipment rental questions. Choose a topic or type your question.</p>
+            </div>
+        </div>
+
+        <div class="support-topics" aria-label="Common support topics"></div>
+
+        <form class="support-form">
+            <label class="visually-hidden" for="supportMessage">Type your support question</label>
+            <input id="supportMessage" name="message" type="text" maxlength="500" autocomplete="off" placeholder="Write a message..." required>
+            <button type="submit" aria-label="Send message" title="Send">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
+        <p class="support-disclaimer">Please do not share your password, OTP, PIN, or full payment details.</p>
+    </section>
+</div>
+<script src="{{ url_for('static', filename='js/customer-support.js') }}" defer></script>

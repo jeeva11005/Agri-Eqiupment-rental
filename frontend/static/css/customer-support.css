@@ -1,0 +1,253 @@
+.support-chat {
+    --support-green: #245b45;
+    --support-ink: #18372c;
+    --support-border: #d9e4de;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1050;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.support-launcher {
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--support-green);
+    color: #fff;
+    box-shadow: 0 5px 18px rgba(20, 48, 38, 0.3);
+    font-size: 21px;
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.support-launcher:hover {
+    background: #173d32;
+    transform: translateY(-2px);
+}
+
+.support-launcher:focus-visible,
+.support-close:focus-visible,
+.support-form button:focus-visible,
+.support-topic:focus-visible {
+    outline: 3px solid #e6b64c;
+    outline-offset: 3px;
+}
+
+.support-panel {
+    position: absolute;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    width: min(370px, calc(100vw - 32px));
+    height: min(530px, calc(100vh - 112px));
+    min-height: 360px;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--support-border);
+    border-radius: 10px;
+    box-shadow: 0 14px 42px rgba(16, 42, 31, 0.23);
+}
+
+.support-panel[hidden] {
+    display: none;
+}
+
+.support-header {
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    color: #fff;
+    background: linear-gradient(110deg, #173d32, #245b45);
+}
+
+.support-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.support-avatar {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.support-heading h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.support-heading p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 3px 0 0;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 12px;
+}
+
+.support-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8bd49f;
+}
+
+.support-close {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+}
+
+.support-close:hover {
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.support-messages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 16px;
+    background: #f7faf8;
+}
+
+.support-message {
+    max-width: 88%;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.support-message p {
+    margin: 0;
+}
+
+.support-message-bot {
+    align-self: flex-start;
+    border: 1px solid #e3ebe6;
+    border-top-left-radius: 3px;
+    color: #273b31;
+    background: #fff;
+}
+
+.support-message-user {
+    align-self: flex-end;
+    border-top-right-radius: 3px;
+    color: #fff;
+    background: var(--support-green);
+}
+
+.support-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 14px 12px;
+    background: #f7faf8;
+}
+
+.support-topic {
+    padding: 6px 9px;
+    border: 1px solid #bed2c5;
+    border-radius: 16px;
+    color: var(--support-ink);
+    background: #fff;
+    font-size: 11px;
+    line-height: 1.25;
+}
+
+.support-topic:hover {
+    border-color: var(--support-green);
+    background: #edf5ef;
+}
+
+.support-form {
+    display: flex;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1px solid var(--support-border);
+    background: #fff;
+}
+
+.support-form input {
+    min-width: 0;
+    height: 40px;
+    flex: 1;
+    padding: 0 11px;
+    border: 1px solid #cbd8d0;
+    border-radius: 6px;
+    color: #1f3027;
+    font-size: 13px;
+}
+
+.support-form input:focus {
+    border-color: var(--support-green);
+    outline: 2px solid rgba(36, 91, 69, 0.16);
+}
+
+.support-form button {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--support-green);
+}
+
+.support-form button:hover {
+    background: #173d32;
+}
+
+.support-form button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.support-disclaimer {
+    margin: 0;
+    padding: 0 14px 10px;
+    color: #687970;
+    background: #fff;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    .support-chat {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .support-panel {
+        right: -4px;
+        bottom: 66px;
+        height: min(530px, calc(100dvh - 96px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .support-launcher {
+        transition: none;
+    }
+}
